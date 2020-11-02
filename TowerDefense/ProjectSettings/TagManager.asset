@@ -7,6 +7,12 @@ TagManager:
   - smallEnemy
   - largeEnemy
   - healthBar
+  - tower
+  - mediumTower
+  - circleTower
+  - bigTower
+  - biggestTower
+  - tower1
   layers:
   - Default
   - TransparentFX

@@ -22,14 +22,7 @@ public class Enemy : MonoBehaviour
   //public Slider healthbar;
   //public Transform enemy;
   
-  /*void Awake()
-    {
-        if (GameObject.FindGameObjectWithTag("healthBar"))
-        {
-            healthbar = (Slider)FindObjectOfType(typeof(Slider));
-        }
-    }  
-    */
+  
     
     // Start is called before the first frame update
   void Start()
@@ -39,7 +32,6 @@ public class Enemy : MonoBehaviour
     transform.position = navPoints[index].transform.position;
     NextWaypoint();
     
-    //Slider slider = Instantiate(healthbar, enemy.position, Quaternion.identity);
     
     //Move towards the next waypoint
     //Retarget to the following waypoint when we reach our current waypoint
@@ -110,6 +102,14 @@ public class Enemy : MonoBehaviour
                     //GameObject.Find("smallEnemy").GetComponent<Enemy>().smallDestroy();
                     purse.killedSmall();
                     Destroy(hit.collider.gameObject);
+                }
+            }
+
+            if (hit.collider.tag == "tower1")
+            {
+                if (purse.purchTower() == true)
+                {
+                    hit.collider.gameObject.GetComponent<MeshRenderer>().material.color = new Color(0.0f, 0.0f, 1.0f, 1.0f);
                 }
             }
 
